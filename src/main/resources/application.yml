@@ -1,0 +1,28 @@
+## Configuracion de Spring
+spring:
+  application:
+    name: ms-inventory-books-elasticsearch
+  main:
+    allow-bean-definition-overriding: true
+  ##Elasticsearch config
+  elasticsearch:
+    uris: https://home-search-8523968319.us-east-1.bonsaisearch.net:443
+    username: 5f5krhlbzp
+    password: pvr0vjd02g
+logging:
+  level:
+    tracer: TRACE
+
+## Configuracion de Instancia 
+server:
+  port: 8088
+  fullAddress: ${HOST:http://localhost}:${PORT:${server.port}}
+
+## Configuracion del cliente de Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    hostname: ms-inventory-products
