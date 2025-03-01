@@ -30,6 +30,11 @@ public class BooksController {
 
 	private final BooksService service;
 
+	@GetMapping("/")
+	public ResponseEntity<String> get() {
+		return ResponseEntity.ok("Hello from Railway + Books!");
+	}
+
 	@GetMapping("/books")
 	public ResponseEntity<BooksQueryResponse> getBooks(
 			@RequestHeader Map<String, String> headers,
